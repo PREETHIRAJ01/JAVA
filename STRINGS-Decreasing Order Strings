@@ -1,0 +1,91 @@
+Decreasing Order Strings
+Sorting numbers is something we are very much comfortable with. Let's get comfortable with sorting strings as well. The task is simple, given a string 
+S
+ you have to sort the characters of the string in lexicographically-decreasing order.
+
+Note - Do not use inbuilt sorting function.
+
+Input format
+The first line contains an integer 
+T
+, denoting the number of test cases.
+Each test case consists of a string 
+S
+ containing only lowercase characters.
+
+Output format
+For each test case on a new line, print the string sorted in lexicographically-decreasing order.
+
+Constraints
+1
+<=
+T
+<=
+5
+
+1
+<=
+|
+S
+|
+<=
+10
+6
+, where 
+|
+S
+|
+ denotes length of string 
+S
+.
+
+Time limit
+1
+ ​secon
+
+Example
+Input
+2
+
+prepbytes
+algorithm
+
+Output
+ytsrppeeb
+tromlihga
+
+CODE:
+import java.util.*;
+import java.io.*;
+
+public class Main {
+  public static void main(String args[]) throws IOException
+  {
+    
+    Scanner sc=new Scanner(System.in);
+    int t=sc.nextInt();
+    while(t-->0)
+    {
+        String s=sc.next();
+        //System.out.println(s);
+        int a[]=new int[26];
+        char ch[]=s.toCharArray();
+        int i,j;
+        for(i=0;i<ch.length;i++)
+        {
+          //int v=ch[i];
+           a[(int)ch[i]-97]++;
+        }
+        for(i=25;i>=0;i--)
+        {
+          for(j=0;j<a[i];j++)
+          {
+          System.out.print((char)(i+97));
+          }
+        }
+        System.out.println();
+        
+    }
+    
+  }
+}
